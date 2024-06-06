@@ -4,7 +4,7 @@ class Checkout
 	include PriceRules
 	attr_accessor :products, :amount
 
-	def initialize(price_rules)
+	def initialize(price_rules = [])
 		@price_rules = price_rules
 		@products = []
 		@amount = 0.0

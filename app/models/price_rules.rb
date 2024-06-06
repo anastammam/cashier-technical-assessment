@@ -7,8 +7,8 @@ module PriceRules
 		products_count = targeted_products.count
 		buy_offer = price_rule[:quantity]
 		get_offer = price_rule[:amount]
-		free_products = 
-			buy_x_get_y_free_products(products_count, buy_offer, get_offer)
+		free_products_count = 
+			buy_x_get_y_free_products_count(products_count, buy_offer, get_offer)
 
 		products_price = targeted_products.sum(&:price)
 		discounted_products_price = (products_count - free_products) * product_price
@@ -48,7 +48,7 @@ module PriceRules
 		@total_amount += discounted_products_price
 	end
 	
-	def buy_x_get_y_free_products(total, buy, get)
+	def buy_x_get_y_free_products_count(total, buy, get)
 		group_size = buy + get
 		return 0 if total < group_size
 

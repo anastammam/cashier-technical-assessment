@@ -3,6 +3,7 @@ require_relative 'price_rules'
 class Checkout
   include PriceRules
   attr_accessor :products, :amount
+  alias_method :basket, :products
 
   def initialize(price_rules = [])
     @price_rules = price_rules
@@ -19,10 +20,6 @@ class Checkout
   def total
     discount!
     return @total_amount.round(2)
-  end
-
-  def basket
-    return @products
   end
 
   private

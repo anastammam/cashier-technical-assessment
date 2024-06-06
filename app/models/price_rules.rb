@@ -11,7 +11,7 @@ module PriceRules
 			buy_x_get_y_free_products_count(products_count, buy_offer, get_offer)
 
 		products_price = targeted_products.sum(&:price)
-		discounted_products_price = (products_count - free_products) * product_price
+		discounted_products_price = (products_count - free_products_count) * product_price
 
 		apply_on_total_amount!(products_price, discounted_products_price)
 	end

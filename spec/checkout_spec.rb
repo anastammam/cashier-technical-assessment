@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe Checkout do
-  let(:green_tea_product) { Product.new(1, "GR1", "Green tea", 3.11) }
-  let(:strawberry_product) { Product.new(2, "SR1", "Strawberry", 5.00) }
-  let(:coffee_product) { Product.new(3, "CF1", "Coffee", 11.23) }
+  let(:green_tea_product) { Product.new(nil, "GR1", "Green tea", 3.11) }
+  let(:strawberry_product) { Product.new(nil, "SR1", "Strawberry", 5.00) }
+  let(:coffee_product) { Product.new(nil, "CF1", "Coffee", 11.23) }
 
   let(:price_rules) do
     [
-      PriceRule.new(1, "GR1", "product_discount", 1, 1),
-      PriceRule.new(2, "SR1", "cash_discount", 3, 0.5),
-      PriceRule.new(3, "CF1", "percentage_discount", 3, 0.6667)
+      PriceRule.new(nil, "GR1", "product_discount", 1, 1),
+      PriceRule.new(nil, "SR1", "cash_discount", 3, 0.5),
+      PriceRule.new(nil, "CF1", "percentage_discount", 3, 0.6667)
     ]
   end
   
